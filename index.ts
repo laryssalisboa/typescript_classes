@@ -1,23 +1,18 @@
-//Import stylesheets
-import './style.css';
+class Greeter {
+  greeting: string;
+  constructor(message: string) {
+    this.greeting = message;
+  }
+greet () {
+  return 'Hello, ' + this.greeting;
+  }
+}
 
-let title: string = 'Olá, mundo!';
-let paragraph: string = 'Blablabla...';
+let greeter = new Greeter('MyApp');
 
-let counter = 0
 
-let intervalId = setInterval(() => (
-  counter = counter + 1;
-  const appP: HTMLElement = document.getElementById('app.p');
-  appP.innerHTML = "Contador: "+counter;
-), 1000)
-
-const btn = HTMLElement = document.getElementById('app.btn');
-btn?.addEventListener("click", alertMethod);
-function alertMethod(this: HTMLElement, ev: Event)(
-  alert("Alertando com typescript");
-)
-
-// Write TypeScript code!
-const appH1: HTMLElement = document.getElementById('app.h1');
-appH1.innerHTML = title;
+const appDiv = HTMLElement = document.getElementById('app');
+appDiv.innerHTML = `
+<h1>Classes</h1>
+<h2>${greeter.greet()}!</h2>
+`;
